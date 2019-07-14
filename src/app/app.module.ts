@@ -12,7 +12,7 @@ import { ExampleTabComponent } from './pages/example-tab/example-tab.component';
   ],
   imports: [
     BrowserModule,
-    NgFyTabsModule
+    NgFyTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

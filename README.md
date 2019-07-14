@@ -1,27 +1,51 @@
-# NgFyTabsLib
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0.
+# ng-fy-tabs
 
-## Development server
+A module for tabs component with component ref without routing
+[Click for demo](https://Fyrok1.github.io/ng-fy-tabs/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Install
+`npm install ng-fy-tabs`
 
-## Code scaffolding
+## Usage
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`import { NgFyTabsModule } from 'ng-fy-tabs';`
 
-## Build
+add to module imports
+```javascript
+imports: [
+  NgFyTabsModule
+]
+```
+add to html file
+```html
+<ng-fy-tabs></ng-fy-tabs>
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+###  Inputs
 
-## Running unit tests
+| Name | Type |Default|Description
+|--|--|--|--|
+| tabs | ngFyTabsInterface[] | []|all tabs object|
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Outputs
+| Name | Type | Description|
+|--|--|--|
+| tabChange| string| Fired when active tab change|
 
-## Further help
+### ngFyTabsInterface
+|Name| Type|Default|Optional|Readonly|Description|
+|--|--|--|--|--|--|
+|id| string or number||false|true|tab id for identification|
+|title|string||false|false|tab title|
+|canRefresh|boolean|false|true|false|tab refresh from zero|
+|canClose|boolean|true|true|false|close tab|
+|component|Component||false|true|Component ref for tab content|
+|componentRef|ComponentRef|undefined|true|false|**Do not set or change** this one for me
+|data|{ key:  string, value:  string }[]||true|false|component attr value
+|loading|boolean|false|true|false|if loading component set true|
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Changing Some Values
+if u want to change somethink change it, its gone be fine but if u gona remove one of data set undefined i'll remove it
