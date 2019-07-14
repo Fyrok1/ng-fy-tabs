@@ -12,7 +12,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "mat-ta",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -115,6 +115,41 @@
             "production": {
               "devServerTarget": "ngFyTabsLib:serve:production"
             }
+          }
+        }
+      }
+    },
+    "ngFyTabs": {
+      "projectType": "library",
+      "root": "projects/ng-fy-tabs",
+      "sourceRoot": "projects/ng-fy-tabs/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng-fy-tabs/tsconfig.lib.json",
+            "project": "projects/ng-fy-tabs/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-fy-tabs/src/test.ts",
+            "tsConfig": "projects/ng-fy-tabs/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-fy-tabs/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-fy-tabs/tsconfig.lib.json",
+              "projects/ng-fy-tabs/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }

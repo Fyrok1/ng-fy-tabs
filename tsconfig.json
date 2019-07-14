@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-fy-tabs": [
+        "dist/ng-fy-tabs"
+      ],
+      "ng-fy-tabs/*": [
+        "dist/ng-fy-tabs/*"
+      ]
+    }
   }
 }
